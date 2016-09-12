@@ -6,10 +6,10 @@ export default class Takequiz extends React.Component {
   }
 
   render(){
-    debugger;
     return(
       <div>
-        {this.props.q}
+        {this.props.q.q}
+        {this.props.q.a}
       </div>
     )
   }

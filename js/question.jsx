@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default class Question extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {truefalse: true, q: "", a: ""}
     this.change_question_type = this.change_question_type.bind(this);
     this.change_input = this.change_input.bind(this);
@@ -22,6 +22,7 @@ export default class Question extends React.Component {
   }
 
   render() {
+    debugger;
     let answer;
     if(this.state.truefalse){
       answer = (<form onChange={this.change_input}>True<input type="radio" name="truefalse" value="true"/>False<input type="radio" name="truefalse" value="false"/></form>);

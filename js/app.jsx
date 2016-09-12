@@ -11,7 +11,7 @@ export default class App extends React.Component {
   }
 
   add_question(){
-    this.setState({questions: this.state.questions.concat([<Question key={this.state.questions.length} />])})
+    this.setState({questions: this.state.questions.concat([{key: this.state.questions.length}])})
   }
 
   change_mode(){
@@ -19,7 +19,9 @@ export default class App extends React.Component {
   }
 
   render() {
-    const editQuestions = this.state.questions;
+    const editQuestions = this.state.questions.map((question) => {
+      return <Question key={question.key}/>;
+    })
     const takeQuiz = <Quiz q={this.state.questions}/>
     return(
       <div>
