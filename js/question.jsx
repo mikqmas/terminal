@@ -6,9 +6,12 @@ export default class Question extends React.Component {
   }
 
   render() {
+    // Check if question is true/false or short answer
     let answer;
     if(this.props.truefalse){
-      answer = (<form onChange={this.props.changeAnswer}>True<input id={this.props.id} type="radio" name="truefalse" value="true"/>False<input type="radio" id={this.props.id} name="truefalse" value="false"/></form>);
+      answer = (<form>
+      True<input onChange={this.props.changeAnswer} id={this.props.id} type="radio" name="truefalse" value="true" checked={this.props.a === "true" ? "checked" : ""}/>
+      False<input onChange={this.props.changeAnswer} type="radio" id={this.props.id} name="truefalse" value="false" checked={this.props.a === "false" ? "checked" : ""}/></form>);
     }else {
       answer = <input type="text" id={this.props.id} name="answer" value={this.props.a} onChange={this.props.changeAnswer} placeholder="answer" />;
     }

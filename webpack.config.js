@@ -4,7 +4,7 @@ var PROD = JSON.parse(process.env.PROD_ENV || '0');
 module.exports = {
   entry: "./js/entry.jsx",
   output: {
-    path: "js",
+    path: "./js",
     filename: PROD ? "bundle.min.js" : "bundle.js"
   },
   devtool: 'source-map',
